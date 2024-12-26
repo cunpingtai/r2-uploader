@@ -1,16 +1,11 @@
-# nixpacks.toml
+[phases.build]
+run = ["npm install", "npm run build"]
 
-[phases]
-# 自定义构建命令
-build = "npm install && npm run build"
-
-# 自定义启动命令
-start = "npm run preview"
+[phases.start]
+run = "npm run preview"
 
 [variables]
-# 设置环境变量（如果需要）
 NODE_ENV = "production"
 
 [dependencies]
-# 添加额外的依赖（如果需要）
-# 例如：curl, git 等
+# 如果需要其他系统工具，可以在这里添加
