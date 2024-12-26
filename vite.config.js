@@ -11,5 +11,5 @@ export default defineConfig({
       "./runtimeConfig": "./runtimeConfig.browser",
     },
   },
-  server: { port: 7896 },
+  server: { port: 7896, host: true },
 });
