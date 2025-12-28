@@ -11,5 +11,8 @@ export default defineConfig({
       "./runtimeConfig": "./runtimeConfig.browser",
     },
   },
+  preview: {
+    allowedHosts: ["uploader.sprunkifamily.com"],
+  },
   server: { port: 7896, host: true },
 });
