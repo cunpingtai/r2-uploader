@@ -8,8 +8,6 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
       - uses: actions/checkout@v4
@@ -29,7 +27,6 @@ jobs:
       - name: Build and push Web service
         run: |
           docker build \
-            --build-arg DATABASE_URL=${{ secrets.DATABASE_URL }} \
             -t ${{ secrets.DOCKERHUB_USERNAME }}/upload-web:latest \
             -f Dockerfile .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/upload-web:latest
